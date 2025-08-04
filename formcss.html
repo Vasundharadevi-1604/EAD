@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Registration</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f2920c, #f49005);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      background-color: #41bbf4;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .gender-group {
+      margin-top: 10px;
+    }
+
+    .gender-group input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .gender-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    button {
+      background-color: #5a67d8;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 25px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1de186;
+    }
+  </style>
+</head>
+<body>
+
+  <form onsubmit="alert('Form submitted successfully!'); return false;">
+    <h1>Student Registration</h1>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="roll">Roll Number:</label>
+    <input type="text" id="roll" name="roll" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
+
+    <label>Gender:</label>
+    <div class="gender-group">
+      <input type="radio" id="male" name="gender" value="male" required />
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+    </div>
+
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch" required>
+      <option value="">-- Select Branch --</option>
+      <option value="cse">Computer Science</option>
+      <option value="ece">Electronics</option>
+      <option value="mech">Mechanical</option>
+    </select>
+
+    <button type="submit">Register</button>
+  </form>
+
+</body>
+</html>
