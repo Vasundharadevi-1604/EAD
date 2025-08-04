@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff9c4; /* Light Yellow Background */
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    form {
+      background: #87bef1;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+    h1 {
+      margin-bottom: 25px;
+      color: #eee6e6;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #b13e3e;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+    .radio-group {
+      margin-bottom: 20px;
+    }
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 20px;
+      color: #f05252;
+    }
+    input[type="radio"] {
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+      cursor: pointer;
+      background-color: #4caf50;
+      border: none;
+      color: rgb(19, 17, 17);
+      padding: 12px 25px;
+      margin-right: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    input[type="reset"] {
+      background-color: #f44336;
+    }
+    input[type="submit"]:hover {
+      background-color: #2c3d2c;
+    }
+  </style>
+</head>
+<body>
+  <form action="/submit-feedback" method="POST" onsubmit="alert('Feedback submitted successfully!'); return false;">
+    <h1>Feedback Form</h1>
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="5" required></textarea>
+    
+    <div class="radio-group">
+      <label>Satisfaction Level:</label>
+      <label><input type="radio" name="satisfaction" value="Satisfied" required /> Satisfied</label>
+      <label><input type="radio" name="satisfaction" value="Neutral" /> Neutral</label>
+      <label><input type="radio" name="satisfaction" value="Unsatisfied" /> Unsatisfied</label>
+    </div>
+    
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Reset" />
+  </form>
+</body>
+</html>
