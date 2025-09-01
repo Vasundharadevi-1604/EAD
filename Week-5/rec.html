@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">🎓 Student Records Dashboard</h2>
+
+    <!-- Filter Form -->
+    <form id="filterForm" class="row g-3 mb-4">
+      <div class="col-md-6">
+        <input type="text" id="searchName" class="form-control" placeholder="Search by name">
+      </div>
+      <div class="col-md-4">
+        <select id="searchCourse" class="form-select">
+          <option value="">All Courses</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="ME">ME</option>
+          <option value="CE">CE</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary w-100" onclick="filterTable()">Filter</button>
+      </div>
+    </form>
+
+    <!-- Alert (hidden initially) -->
+    <div id="noRecordsAlert" class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+      <strong>No records found!</strong> Try adjusting your search criteria.
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Responsive Table -->
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle" id="studentTable">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>101</td><td>Devi</td><td>CSE</td><td>2</td><td>A</td>
+          </tr>
+          <tr>
+            <td>102</td><td>Sharma</td><td>ECE</td><td>3</td><td>B+</td>
+          </tr>
+          <tr>
+            <td>103</td><td>Varma</td><td>ME</td><td>1</td><td>B</td>
+          </tr>
+          <tr>
+            <td>104</td><td>Bose</td><td>CE</td><td>4</td><td>A+</td>
+          </tr>
+          <tr>
+            <td>105</td><td>Goher</td><td>CSE</td><td>2</td><td>A-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function filterTable() {
+      let nameFilter = document.getElementById("searchName").value.toLowerCase();
+      let courseFilter = document.getElementById("searchCourse").value;
+      let table = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
+      let rows = table.getElementsByTagName("tr");
+
+      let visibleCount = 0;
+
+      for (let i = 0; i < rows.length; i++) {
+        let cells = rows[i].getElementsByTagName("td");
+        let name = cells[1].textContent.toLowerCase();
+        let course = cells[2].textContent;
+
+        if ((name.includes(nameFilter)) && (courseFilter === "" || course === courseFilter)) {
+          rows[i].style.display = "";
+          visibleCount++;
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+
+      // Show alert if no records
+      let alertBox = document.getElementById("noRecordsAlert");
+      if (visibleCount === 0) {
+        alertBox.classList.remove("d-none");
+      } else {
+        alertBox.classList.add("d-none");
+      }
+    }
+  </script>
+
+</body>
+</html>
