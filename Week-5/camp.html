@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBIT Campus Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">CBIT Campus Gallery</h2>
+
+  <!-- Carousel -->
+  <div id="campusCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="images/cbit_campus.png" class="d-block w-100" alt="CBIT Campus">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Main Campus</h5>
+          <p>Welcome to the heart of CBIT campus life.</p>
+          <a href="#" class="btn btn-primary">Explore More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-bs-interval="2500">
+        <img src="images/cbit_library.jpg" class="d-block w-100" alt="Library">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Library</h5>
+          <p>A place for knowledge and discovery.</p>
+          <a href="#" class="btn btn-success">Visit Library</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="images/cbit_sports.jpg" class="d-block w-100" alt="Sports">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Sports & Recreation</h5>
+          <p>Encouraging fitness, teamwork, and fun.</p>
+          <a href="#" class="btn btn-warning">Join Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#campusCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#campusCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="row mt-5 text-center">
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="images/cbit_library.jpg" class="card-img-top" alt="Library">
+        <div class="card-body">
+          <h5 class="card-title">Library</h5>
+          <p class="card-text">Our digital and physical library supports academic growth.</p>
+          <a href="#" class="btn btn-outline-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="images/cbit_labs.jpg" class="card-img-top" alt="Labs">
+        <div class="card-body">
+          <h5 class="card-title">Labs</h5>
+          <p class="card-text">Well-equipped labs for innovation and experimentation.</p>
+          <a href="#" class="btn btn-outline-success">Discover</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <img src="images/cbit_sports.jpg" class="card-img-top" alt="Sports">
+        <div class="card-body">
+          <h5 class="card-title">Sports</h5>
+          <p class="card-text">Facilities for cricket, basketball, athletics, and more.</p>
+          <a href="#" class="btn btn-outline-warning">Join</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
