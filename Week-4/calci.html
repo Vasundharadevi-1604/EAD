@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>JS Calculator</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&dis play=swap" rel="stylesheet"> 
+  <style>     body {       font-family: 'Roboto', sans-serif;       background: #e0e0e0;        display: flex;       justify-content: center;       align-items: center;       height: 100vh;       margin: 0; 
+    } 
+ 
+    .calculator { 
+      background: linear-gradient(145deg, #ffffff, #f1f1f1);        padding: 25px;        border-radius: 20px;       box-shadow: 4px 4px 15px rgba(0,0,0,0.1),-4px -4px 15px       
+rgba(255,255, 255, 0.3); 
+      width: 320px;        box-sizing: border-box;  
+    } 
+ 
+    #result {       width: 100%;       height: 80px;        font-size: 40px;        margin-bottom: 20px;       padding: 15px;        text-align: right;       border: none;       border-radius: 10px;       background-color: #f9f9f9;       box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 
+5px rgba(255, 255, 255, 0.3);       box-sizing: border-box;  
+    } 
+ 
+    .buttons {       display: grid;       grid-template-columns: repeat(4, 1fr);       gap: 15px; 
+    }      button {       padding: 20px;       font-size: 20px;       border: none;       border-radius: 15px;       background: #e0e0e0;       cursor: pointer;       transition: all 0.3s ease-in-out;       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.3); 
+    }  
+    button:hover {       background: #f1f1f1;       transform: translateY(-2px);       box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px       
+rgba(255, 255, 255, 0.4); 
+    } 
+ 
+    .operator { 
+      background-color: #f9a825;       color: white; 
+    } 
+ 
+    .equal { 
+      background-color: #43a047;       color: white;       grid-column: span 2;       font-weight: 500; 
+    } 
+ 
+    .clear { 
+      background-color: #e53935; 
+ 
+      color: white;       grid-column: span 2;       font-weight: 500; 
+    } 
+ 
+    .backspace { 
+      background-color: #ee3131;        color: white; 
+    } 
+ 
+    .backspace:hover { 
+      background-color: #e92626;  
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+  <div class="calculator"> 
+    <input type="text" id="result" disabled /> 
+    <div class="buttons"> 
+      <button onclick="clearDisplay()" class="clear">C</button> 
+      <button onclick="appendValue('/')" class="operator">/</button> 
+      <button onclick="appendValue('*')" class="operator">*</button> 
+       
+      <button onclick="appendValue('7')">7</button> 
+      <button onclick="appendValue('8')">8</button> 
+      <button onclick="appendValue('9')">9</button> 
+      <button onclick="appendValue('-')" class="operator">-</button> 
+       
+      <button onclick="appendValue('4')">4</button> 
+      <button onclick="appendValue('5')">5</button> 
+      <button onclick="appendValue('6')">6</button> 
+      <button onclick="appendValue('+')" class="operator">+</button> 
+       
+      <button onclick="appendValue('1')">1</button> 
+      <button onclick="appendValue('2')">2</button> 
+      <button onclick="appendValue('3')">3</button> 
+      <button onclick="appendValue('.')" class="operator">.</button> 
+       
+      <button onclick="appendValue('0')">0</button> 
+      <button onclick="calculate()" class="equal">=</button> 
+      <button onclick="backspace()" class="backspace">←</button> 
+    </div> 
+  </div> 
+ 
+   <script> 
+    const result = document.getElementById('result'); 
+ 
+    function appendValue(value) {       result.value += value; 
+    }  
+    function clearDisplay() {       result.value = ''; 
+    }  
+    function calculate() {       try {         result.value = eval(result.value); 
+      } catch (e) {         alert('Invalid expression');         clearDisplay(); 
+      } 
+    }  
+    function backspace() {       result.value = result.value.slice(0, -1); 
+    } 
+  </script> 
+ 
+</body> 
+</html> 
+  
+   
+  
